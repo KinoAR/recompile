@@ -16,7 +16,7 @@ let outFileName = Array.get(fileNames, 1);
 let jsCommand = "bsc -pp \"refmt --print ml\" -c -impl " ++ fileName ++ " -o " ++ outFileName;
 let byteCommand = "ocamlc str.cma -verbose -pp \"refmt --print binary\" -o  ./" 
   ++ outFileName ++ " -impl " ++ fileName;
-let nativeCommand = "ocamlopt str.cma -verbose -pp \"refmt --print binary\" -o  ./" 
+let nativeCommand = "ocamlopt str.cmx -verbose -pp \"refmt --print binary\" -o  ./" 
   ++ outFileName ++ " -impl " ++ fileName;
 let performFlagOperation = (flag) => {
   let commandOps = switch (flag) {

@@ -39,7 +39,7 @@ let vowelToNumber = (charString: string) => {
   vowel ? 1 : 0;
 };
 
-/* let add = (x, y) => x + y;
+let add = (x, y) => x + y;
 let countVowelFromFile = fileName =>
   fileName
   |> trimFileName
@@ -50,4 +50,4 @@ let countVowelFromFile = fileName =>
 
 let vowelTotal =
   Array.map(countVowelFromFile, args) |> Array.fold_left((x, y) => x + y, 0);
-print_endline(string_of_int(vowelTotal)); */
+print_endline(string_of_int(vowelTotal));

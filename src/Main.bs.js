@@ -34,7 +34,7 @@ var jsCommand = "bsc -pp \"refmt --print ml\" -c -impl " + (fileName + (" -o " +
 
 var byteCommand = "ocamlc str.cma -verbose -pp \"refmt --print binary\" -o  ./" + (outFileName + (" -impl " + fileName));
 
-var nativeCommand = "ocamlopt str.cma -verbose -pp \"refmt --print binary\" -o  ./" + (outFileName + (" -impl " + fileName));
+var nativeCommand = "ocamlopt str.cmx -verbose -pp \"refmt --print binary\" -o  ./" + (outFileName + (" -impl " + fileName));
 
 function performFlagOperation(flag) {
   var commandOps;
