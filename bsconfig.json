@@ -19,5 +19,22 @@
     "error" : "+101"
   },
   "namespace": true,
+  "entries": [
+    {
+    "backend": "native",
+    "main-module": "Main",
+    "output-name": "recompile"
+  }, 
+  {
+    "backend": "bytecode",
+    "main-module": "Main",
+    "output-name": "recompile"
+  },
+  {
+    "backend": "js",
+    "main-module": "Main",
+    "output-name": "recompile"
+  }
+],
   "refmt": 3
 }
