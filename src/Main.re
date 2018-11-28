@@ -1,8 +1,10 @@
 /* 
-* Command Example: recompile <fileName> <buildType> <outputName>
-* Example: recompile readFile.re readFile -backend js
+* Author: Kino Rose
+* Command Example: recompile <fileName>  <outputName> <buildType> <pkgflag> pkgnames
+* Example: recompile readFile.re readFile bytecode -pkg str threads
 */
 let args = Array.sub(Sys.argv, 1, Array.length(Sys.argv) - 1);
+
 let rec findIndex = (element, n, arr) => {
   if(n == -1) {
     -1;
@@ -13,6 +15,7 @@ let rec findIndex = (element, n, arr) => {
     findIndex(element, n - 1, arr);
   }
 };
+
 let concatString = (str1, str2) => str1 ++ str2;
 let getArgs = Array.get(args);
 let index = findIndex("-pkg", Array.length(args) - 1, args) + 1;
@@ -29,7 +32,6 @@ let nativeCommand = "-pp \"refmt --print binary\" -o  ./"
   ++ outFileName ++ " -impl " ++ fileName;
 
 let containsString = (stringToCheck, strChecker) => {
-  /* print_endline(stringToCheck ++ "Test") */
   let re = Str.regexp_string(strChecker);
   let result = try (Str.search_forward(re,stringToCheck,0)) {
     | Not_found => 0
@@ -56,6 +58,5 @@ let performFlagOperation = (flag) => {
   } else {
     print_endline("Failed compilation");
   }
-  
 };
 performFlagOperation(compileType);
