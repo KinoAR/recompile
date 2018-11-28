@@ -36,10 +36,10 @@ This works by taking the reason code and running it through a **refmt** to conve
 
 ## Compile To Bytecode
 ```
-./lib/bs/native/recompile vowelCount.re vowelCount -bytecode
+./lib/bs/native/recompile vowelCount.re vowelCount bytecode -pkg str
 ```
 
 ## Compile To JS
 ```
-./lib/bs/native/recompile vowelCount.re vowelCount -js
+./lib/bs/native/recompile vowelCount.re vowelCount js
 ```
