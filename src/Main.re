@@ -31,13 +31,6 @@ let byteCommand = "-pp \"refmt --print binary\" -o  ./"
 let nativeCommand = "-pp \"refmt --print binary\" -o  ./" 
   ++ outFileName ++ " -impl " ++ fileName;
 
-let containsString = (stringToCheck, strChecker) => {
-  let re = Str.regexp_string(strChecker);
-  let result = try (Str.search_forward(re,stringToCheck,0)) {
-    | Not_found => 0
-  };
-  result;
-}
 let makeLibString = (extension, libArr) => Array.map(concatString(_, extension ++ " "), libArr)
   |> Array.fold_left(concatString, "");
 let makeLibs = makeLibString(_, libs);
